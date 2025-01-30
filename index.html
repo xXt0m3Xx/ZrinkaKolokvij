@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Predložak</title>
+    <link rel="stylesheet" href="moj.css">
+</head>
+<body>
+    <nav>
+        <a onclick="showSection('obavijest')">Obavijest</a>
+        <a onclick="showSection('slika')">Slika</a>
+        <a onclick="showSection('rezultati')">Rezultati</a>
+    </nav>
+    
+    <div class="container">
+        <div id="obavijest" class="content active">
+            <h2>Obavijest</h2>
+            <p>Ovdje se prikazuje obavijest.</p>
+        </div>
+        
+        <div id="slika" class="content">
+            <h2>Slika</h2>
+            <img src="example.jpg" alt="Primjer slike" width="300">
+        </div>
+        
+        <div id="rezultati" class="content">
+            <h2>Rezultati</h2>
+            <p>Ovdje su prikazani rezultati.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Podnožje stranice</p>
+    </footer>
+    
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.content').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
