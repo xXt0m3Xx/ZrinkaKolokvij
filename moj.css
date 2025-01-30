@@ -54,3 +54,13 @@ footer {
     align-items: center;
     justify-content: center;
 }
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.rotated {
+    transform: rotate(90deg);
+    transition: transform 0.5s ease-in-out;
+}

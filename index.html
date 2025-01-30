@@ -17,30 +17,58 @@
         <div id="obavijest" class="content active">
             <h2>Obavijest</h2>
             <p>Ovdje se prikazuje obavijest.</p>
+            <div id="kolokvij-box" style="display: none; border: 2px solid red; padding: 10px; margin-top: 20px;">
+                2. kolokvij - grupa B
+            </div>
         </div>
         
         <div id="slika" class="content">
             <h2>Slika</h2>
-            <img src="example.jpg" alt="Primjer slike" width="300">
+            <img src="monalisa.jpg" alt="Primjer slike" width="300">
         </div>
         
         <div id="rezultati" class="content">
             <h2>Rezultati</h2>
-            <p>Ovdje su prikazani rezultati.</p>
+            <form id="rezultatiForm">
+                <label for="ime">Ime:</label>
+                <input type="text" id="ime"><br>
+                
+                <label for="prezime">Prezime:</label>
+                <input type="text" id="prezime"><br>
+                
+                <label for="kolegij">Kolegij:</label>
+                <input type="text" id="kolegij"><br>
+                
+                <label for="bodovi">Bodovi (0-40):</label>
+                <input type="number" id="bodovi" min="0" max="40"><br>
+                
+                <label for="ocjena">Ocjena:</label>
+                <input type="text" id="ocjena" readonly><br>
+                
+                <button type="button" onclick="preuzmiPodatkeIzForme()">Spremi rezultat</button>
+            </form>
+            
+            <div id="rezultatiDisplay" style="margin-top: 20px; display: none;">
+                <h3>Prikazani podaci:</h3>
+                <p><strong>Ime:</strong> <span id="rezIme"></span></p>
+                <p><strong>Prezime:</strong> <span id="rezPrezime"></span></p>
+                <p><strong>Kolegij:</strong> <span id="rezKolegij"></span></p>
+                <p><strong>Bodovi:</strong> <span id="rezBodovi"></span></p>
+                <p><strong>Ocjena:</strong> <span id="rezOcjena"></span></p>
+            </div>
+            
+            <div id="jsonDisplay" style="margin-top: 20px; display: none;">
+                <h3>Podaci u JSON formatu:</h3>
+                <pre id="jsonData"></pre>
+            </div>
         </div>
     </div>
     
     <footer>
-        <p>Podnožje stranice</p>
+        <div id="footer-left">Zrinka Klišanin - <span id="current-time"></span></div>
+       
     </footer>
     
-    <script>
-        function showSection(sectionId) {
-            document.querySelectorAll('.content').forEach(section => {
-                section.classList.remove('active');
-            });
-            document.getElementById(sectionId).classList.add('active');
-        }
-    </script>
+    <script src="kod.js"></script>
 </body>
 </html>
